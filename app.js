@@ -14,10 +14,10 @@
 
 // DOM
 const buttons = document.querySelectorAll(".btn");
-console.log(buttons);
+const header = document.getElementById("HeaderText");
+
 let color;
 
-const red = document.getElementById("Btn");
 
 buttons.forEach(button => {
     button.addEventListener("click",function clicked(){
@@ -28,6 +28,8 @@ buttons.forEach(button => {
 //Functions
 function buttonClick(button){
     color = getComputedStyle(button).backgroundColor;
+    header.style.display = "block";
+    header.innerHTML = "RGB : "+color;
     applyBackgroundColor(color);
 }
 
